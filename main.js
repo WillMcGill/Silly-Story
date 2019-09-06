@@ -35,12 +35,15 @@ function result() {
 
   if(customName.value !== '') {
     var name = customName.value;
+    newStory = newStory.replace ("Bob", name)
 
   }
 
   if(document.getElementById("uk").checked) {
-    var weight = Math.round(300);
-    var temperature =  Math.round(94);
+    var weight = Math.round(300 / 14) + ' stone';
+    var temperature =  Math.round((94-32) * 5 / 9) + ' centigrade';
+    newStory = newStory.replace ("94 fahrenheit", temperature);
+    newStory = newStory.replace ("300 pounds", weight);
 
   }
 
@@ -57,3 +60,4 @@ let zItem = randomValueFromArray(insertZ);
 newStory = newStory.replace (":insertx:", xItem );
 newStory = newStory.replace (":inserty:", yItem );
 newStory = newStory.replace (":insertz:", zItem );
+newStory = newStory.replace (":insertx:", xItem );
