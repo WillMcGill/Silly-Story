@@ -31,6 +31,16 @@ randomize.addEventListener('click', result);
 
 let newStory = storyText;
 
+
+let xItem = randomValueFromArray(insertX);
+let yItem = randomValueFromArray(insertY);
+let zItem = randomValueFromArray(insertZ);
+
+newStory = newStory.replace (":insertx:", xItem );
+newStory = newStory.replace (":inserty:", yItem );
+newStory = newStory.replace (":insertz:", zItem );
+newStory = newStory.replace (":insertx:", xItem );
+
 function result() {
 
   if(customName.value !== '') {
@@ -50,14 +60,3 @@ function result() {
   story.textContent = newStory;
   story.style.visibility = 'visible';
 }
-
-
-
-let xItem = randomValueFromArray(insertX);
-let yItem = randomValueFromArray(insertY);
-let zItem = randomValueFromArray(insertZ);
-
-newStory = newStory.replace (":insertx:", xItem );
-newStory = newStory.replace (":inserty:", yItem );
-newStory = newStory.replace (":insertz:", zItem );
-newStory = newStory.replace (":insertx:", xItem );
