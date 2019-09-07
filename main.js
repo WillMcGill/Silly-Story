@@ -29,7 +29,9 @@ let insertZ = ['spontaneously combusted',
 
 randomize.addEventListener('click', result);
 
-let newStory = storyText;
+function result() {
+
+var newStory = storyText;
 
 
 let xItem = randomValueFromArray(insertX);
@@ -41,7 +43,7 @@ newStory = newStory.replace (":inserty:", yItem );
 newStory = newStory.replace (":insertz:", zItem );
 newStory = newStory.replace (":insertx:", xItem );
 
-function result() {
+
 
   if(customName.value !== '') {
     var name = customName.value;
@@ -60,3 +62,17 @@ function result() {
   story.textContent = newStory;
   story.style.visibility = 'visible';
 }
+
+
+window.onload = getRandom;
+
+function getRandom() {fetch('https://randomuser.me/api/?results=1')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(JSON.stringify(myJson));
+  });
+
+}
+
